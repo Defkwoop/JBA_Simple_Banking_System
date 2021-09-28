@@ -63,6 +63,32 @@ public class Bank {
     private void exit() {
         running = false;
     }
+    
+    public void loginto() {
+        System.out.println("1. Balance \n2. Log out \n0. Exit");
+        int input = scanner.nextInt();
+        scanner.nextLine();
+        switch (input) {
+            case 1:
+                balance();
+                break;
+            case 2:
+                logout();
+                break;
+            case 0:
+                exit();
+                break;
+        }
+    }
 
+    private void balance() {
+        System.out.println("Balance: 0");
+        loginto();
+    }
+
+    private void logout() {
+        System.out.println("You have successfully logged out!");
+        return;
+    }
 
 }
