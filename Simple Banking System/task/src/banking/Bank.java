@@ -13,13 +13,16 @@ public class Bank {
     Map<String, CreditCard> creditCardDetails = new HashMap<>();
 
     private boolean running = true;
+
     public boolean isRunning() {
         return running;
     }
 
     public void actions() {
         System.out.println("1. Create an account \n2. Log into account \n0. Exit");
-        switch (scanner.nextInt()) {
+        int input = scanner.nextInt();
+        scanner.nextLine();
+        switch (input) {
             case 1:
                 create();
                 break;
@@ -45,8 +48,18 @@ public class Bank {
 
     private void login() {
         System.out.println("Enter your card number:");
+        final String creditCardNumber = scanner.nextLine();
+        System.out.println("Enter your PIN:");
+        final String pin = scanner.nextLine();
+        CreditCard creditCard = creditCardDetails.get(creditCardNumber);
+        if (creditCard != null) {
+            if (creditCard.getCardPIN().equals(pin)) {
+                System.out.println("Success.");
+                return;
+            }
+        }
+        System.out.println("Wrong.");
     }
-
     private void exit() {
         running = false;
     }
