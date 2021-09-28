@@ -54,17 +54,18 @@ public class Bank {
         CreditCard creditCard = creditCardDetails.get(creditCardNumber);
         if (creditCard != null) {
             if (creditCard.getCardPIN().equals(pin)) {
-                System.out.println("Success.");
+                System.out.println("You have successfully logged in!");
                 loginto();
                 return;
             }
         }
-        System.out.println("Wrong.");
+        System.out.println("Wrong card number or PIN!");
     }
+    
     private void exit() {
         running = false;
     }
-    
+
     public void loginto() {
         System.out.println("1. Balance \n2. Log out \n0. Exit");
         int input = scanner.nextInt();
@@ -86,10 +87,9 @@ public class Bank {
         System.out.println("Balance: 0");
         loginto();
     }
-
-    private void logout() {
+    
+    private void logout(){
         System.out.println("You have successfully logged out!");
         return;
     }
-
 }
