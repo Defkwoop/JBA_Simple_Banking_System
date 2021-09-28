@@ -55,6 +55,7 @@ public class Bank {
         if (creditCard != null) {
             if (creditCard.getCardPIN().equals(pin)) {
                 System.out.println("Success.");
+                loginto();
                 return;
             }
         }
