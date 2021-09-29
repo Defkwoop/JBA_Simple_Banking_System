@@ -61,7 +61,7 @@ public class Bank {
         }
         System.out.println("Wrong card number or PIN!");
     }
-    
+
     private void exit() {
         running = false;
     }
@@ -87,9 +87,8 @@ public class Bank {
         System.out.println("Balance: 0");
         loginto();
     }
-    
+
     private void logout(){
         System.out.println("You have successfully logged out!");
-        return;
     }
 }
