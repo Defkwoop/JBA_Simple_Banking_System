@@ -4,6 +4,7 @@ public class CreditCard {
 
     private final String cardNumber;
     private final String cardPIN;
+    private int balance;
 
     public CreditCard(String cardNumber, String cardPIN) {
         this.cardNumber = cardNumber;
@@ -16,5 +17,9 @@ public class CreditCard {
 
     public String getCardPIN() {
         return cardPIN;
+    }
+
+    public int getBalance() {
+        return balance;
     }
 }
